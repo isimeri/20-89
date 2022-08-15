@@ -1,0 +1,13 @@
+.epic::before{
+    content: "in url, dupa numele domeniului scrie '/epic_life_quote2', si pregateste-te";
+    height: 0;
+    width: 0;
+    display: none;
+}
+.container-supremeth{
+    min-height: 100vh;
+    justify-content: center;
+    font-size: 3rem;
+    font-family: "Source Code Pro", monospace;
+    user-select: none;
+}

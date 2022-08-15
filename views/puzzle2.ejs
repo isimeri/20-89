@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <link rel="stylesheet" href="css/general_styles.css">
+    <link rel="stylesheet" href="css/puzzle_styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="btn btn-lightgreen-frame">Home</a>
+        <form action="/logout" method="get">
+            <button type="submit" class="btn btn-lightgreen-frame btn-logout">Log out</button>
+        </form>
+    </nav>
+    <div class="container-supremeth">
+        <main>
+            <div class="question-wrapper">
+                <h2 class="question">Cate unghiuri are hexagonul?</h2>
+                <p class="small description">Nu totul este atat de simplu precum pare, considera-te avertizata.</p>
+                <div class="form-wrapper">
+                    <form action="/puzzles/2" method="post">
+                        <% if(progress > pageIndex) { %>
+                            <input type="text" name="answer" id="answer" disabled>
+                            <button type="submit" class="btn" disabled>Submit</button>
+                        <% } else { %>
+                            <input type="text" name="answer" id="answer">
+                            <button type="submit" class="btn btn-lightgreen">Submit</button>
+                        <% } %>
+                    </form>
+                    <input type="hidden" class="ooooooooooooooooo, ce sa fie oare aicea" data-linkulSpreAdevar="https://www.youtube.com/watch?v=HaAezMqOp45">
+                    <div class="form-footer">
+                        <p>&gt;&gt;&gt;<%= message || "" %></p>
+                        <% if(progress > pageIndex) { %>
+                            <a href="/puzzles/3"class="btn btn-lightgreen">Purcede</a>
+                        <% } %>
+                    </div>
+                </div>
+            </div> 
+            <div class="hints-wrapper">
+                <% for(let i = 0; i < hints.length; i++) { %>
+                    <div class="hint">
+                        <p><%= hints[i] %></p>
+                    </div>
+                <% } %>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

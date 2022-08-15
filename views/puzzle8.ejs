@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8</title>
+    <link rel="stylesheet" href="css/general_styles.css">
+    <link rel="stylesheet" href="css/puzzle_styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="btn btn-lightgreen-frame">Home</a>
+        <form action="/logout" method="get">
+            <button type="submit" class="btn btn-lightgreen-frame btn-logout">Log out</button>
+        </form>
+    </nav>
+    <div class="container-supremeth">
+        <div class="question-wrapper">
+            <h2 class="question">Bafta!</h2>
+            <div class="table-wrapper">
+                <table>
+                    <tr>
+                        <td>nirambus</td>
+                        <td>adnilgo</td>
+                        <td>nujed</td>
+                        <td>eirdnocotim</td>
+                        <td>iedra</td>
+                        <td>iarutug</td>
+                    </tr>
+                    <tr>   
+                        <td>zeruhuh</td>
+                        <td>ednu</td>
+                        <td>agnats</td>
+                        <td>etatamuj</td>
+                        <td>araojnilgo</td>
+                        <td>telrah</td>
+                    </tr>
+                    <tr>
+                        <td>erac</td>
+                        <td>iorutsu</td>
+                        <td>ii</td>
+                        <td>noclab</td>
+                        <td>atar</td>
+                        <td>araes</td>
+                    </tr>
+                    <tr>
+                        <td>aec</td>
+                        <td>avresnoc</td>
+                        <td>nobmaj</td>
+                        <td>rete</td>
+                        <td>iam</td>
+                        <td>lagapap</td>
+                    </tr>
+                    <tr>
+                        <td>un</td>
+                        <td>usor</td>
+                        <td>azrav</td>
+                        <td>rautort</td>
+                        <td>urca</td>
+                        <td>atnatropmi</td>
+                    </tr>
+                    <tr>
+                        <td>ruazonid</td>
+                        <td>bmulp</td>
+                        <td>muc</td>
+                        <td>urdnaelacam</td>
+                        <td>erao</td>
+                        <td>noili</td>
+                    </tr>
+                    <tr>
+                        <td>eidoz</td>
+                        <td>nid</td>
+                        <td>apa</td>
+                        <td>atenitort</td>
+                        <td>eras</td>
+                        <td>namil</td>
+                    </tr>
+                    <tr>
+                        <td>namus</td>
+                        <td>azoetopa</td>
+                        <td>nmel</td>
+                        <td>orez</td>
+                        <td>aznarb</td>
+                        <td>arat</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="form-wrapper">
+                <form action="/puzzles/8" method="post">
+                    <% if(progress > pageIndex) { %>
+                        <input type="text" name="answer" id="answer" disabled>
+                        <button type="submit" class="btn btn-lightgreen" disabled>Submit</button>
+                    <% } else { %>
+                        <input type="text" name="answer" id="answer">
+                        <button type="submit" class="btn btn-lightgreen">Submit</button>
+                    <% } %>
+                </form>
+                <div class="form-footer">
+                    <p>&gt;&gt;&gt;<%= message || "" %></p>
+                    <% if(progress > pageIndex) { %>
+                        <a href="/puzzles/9" class="btn btn-lightgreen">Purcede</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

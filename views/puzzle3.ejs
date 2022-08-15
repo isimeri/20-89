@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <link rel="stylesheet" href="css/general_styles.css">
+    <link rel="stylesheet" href="css/puzzle_styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="btn btn-lightgreen-frame">Home</a>
+        <form action="/logout" method="get">
+            <button type="submit" class="btn btn-lightgreen-frame btn-logout">Log out</button>
+        </form>
+    </nav>
+    <div class="container-supremeth">
+        <main>
+            <div class="question-wrapper">
+                <h2 class="question">Care este numele de super-erou al unicului presedinte moldovean cu super puteri?</h2>
+                <div class="form-wrapper">
+                    <!-- am pus mai jos un link catre un site de cumparat droguri si marihuanele ca sa nu uit nu intra acolo ca te vede kgb -->
+                    <a href="/sticky_notes" style="display: none;">link nedubios</a>
+                    <form action="/puzzles/3" method="post">
+                        <% if(progress > pageIndex) { %>
+                            <input type="text" name="answer" id="answer" disabled>
+                            <button type="submit" class="btn btn-lightgreen" disabled>Submit</button>
+                        <% } else { %>
+                            <input type="text" name="answer" id="answer">
+                            <button type="submit" class="btn btn-lightgreen">Submit</button>
+                        <% } %>
+                    </form>
+                    <div class="form-footer">
+                        <p>&gt;&gt;&gt;<%= message || "" %></p>
+                        <% if(progress > pageIndex) { %>
+                            <a href="/puzzles/4" class="btn btn-lightgreen">Purcede</a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <div class="hints-wrapper">
+                <% for(let i = 0; i < hints.length; i++) { %>
+                    <div class="hint">
+                        <p><%= hints[i] %></p>
+                    </div>
+                <% } %>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

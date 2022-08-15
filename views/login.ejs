@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bine venit-ai!</title>
+	<link rel="stylesheet" href="css/general_styles.css">
+</head>
+<body>
+	<nav></nav>
+	<div class="container-supremeth">
+		
+		<% if(messages.error) { %>
+			<p class="error-message"><%= messages.error %></p>
+		  <% } %>
+		<div class="form-wrapper">
+			<form action="/login" class="login-form" method="POST">
+				<input type="text" name="username" id="username" placeholder="Username">
+				<input type="password" name="password" id="password" placeholder="Password">
+				<button type="submit" class="btn btn-blue">Log in</button>
+			</form>
+			<p>Nu ai un cont? <a href="/login_a" class="link register-link">Inregistreaza-te!</a></p>
+		</div>
+	</div>
+</body>
+</html>

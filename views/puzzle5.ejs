@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+    <link rel="stylesheet" href="css/general_styles.css">
+    <link rel="stylesheet" href="css/puzzle_styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="btn btn-lightgreen-frame">Home</a>
+        <form action="/logout" method="get">
+            <button type="submit" class="btn btn-lightgreen-frame btn-logout">Log out</button>
+        </form>
+    </nav>
+    <div class="container-supremeth">
+        <div class="question-wrapper">
+            <h2 class="question">9 alt+4</h2>
+            <main>
+                <div class="list-wrapper">
+                    <ul class="left-list list">
+                        <li>1. Iepure veninos</li>
+                        <li>2. Masina de tuns iarba</li>
+                        <li>3. Harry Potter si Ordinul Phoenix</li>
+                        <li>4. Chiloti cu guler</li>
+                        <li>5. Grebla cu Bluetooth</li>
+                        <li>6. Moara cu noroc</li>
+                        <li>7. Barrack Obama</li>
+                        <li>8. Acvariu pentru hulubi</li>
+                    </ul>
+                </div>
+                <div class="form-wrapper">
+                    <form action="/puzzles/5" method="post">
+                        <% if(progress > pageIndex) { %>
+                            <input type="text" name="answer" id="answer" disabled>
+                            <button type="submit" class="btn btn-lightgreen" disabled>Submit</button>
+                        <% } else { %>
+                            <input type="text" name="answer" id="answer">
+                            <button type="submit" class="btn btn-lightgreen">Submit</button>
+                        <% } %>
+                    </form>
+                    <div class="form-footer">
+                        <p>&gt;&gt;&gt;<%= message || "" %></p>
+                        <% if(progress > pageIndex) { %>
+                            <a href="/puzzles/6" class="btn btn-lightgreen">Purcede</a>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="list-wrapper">
+                    <ul class="right-list list">
+                        <li>a. Coltuni cu pleoape</li>
+                        <li>b. Aventurile lui Tom Sawyer</li>
+                        <li>c. Parasuta de lemn</li>
+                        <li>d. Hartie igienica second hand</li>
+                        <li>e. Minunata lume noua</li>
+                        <li>f. Pantaloni portabili</li>
+                        <li>g. Portocala mecanica</li>
+                        <li>h. Diclordifeniltriclormetilmetan</li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

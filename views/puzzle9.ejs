@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9</title>
+    <link rel="stylesheet" href="css/general_styles.css">
+    <link rel="stylesheet" href="css/puzzle_styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="btn btn-lightgreen-frame">Home</a>
+        <form action="/logout" method="get">
+            <button type="submit" class="btn btn-lightgreen-frame btn-logout">Log out</button>
+        </form>
+    </nav>
+    <div class="container-supremeth">
+        <div class="question-wrapper">
+            <div class="poem-wrapper">
+                <p class="poem">Sara pe deal buciumul suna cu jale,<br/>
+                Turmele-l urc, stele le scapara-n cale,<br/>
+                Apele plang, clar izvorand in fantane;<br/>
+                Sub un salcam, draga, m-astepti tu pe mine.</p>
+            </div>
+            <h2 class="question">Ce mesaj a vrut sa transmita poetul catre cititor in aceste versuri?</h2><!--criptat cu ceva-->
+            <div class="form-wrapper">
+                <form action="/puzzles/9" method="post">
+                    <% if(progress > pageIndex) { %>
+                        <input type="text" name="answer" id="answer" disabled>
+                        <button type="submit" class="btn btn-lightgreen" disabled>Submit</button>
+                    <% } else { %>
+                        <input type="text" name="answer" id="answer">
+                        <button type="submit" class="btn btn-lightgreen">Submit</button>
+                    <% } %>
+                </form>
+                <div class="form-footer">
+                    <p>&gt;&gt;&gt;<%= message || "" %></p>
+                    <% if(progress > pageIndex) { %>
+                        <a href="/puzzles/10" class="btn btn-lightgreen">Purcede</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

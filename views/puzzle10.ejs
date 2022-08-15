@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10</title>
+    <link rel="stylesheet" href="css/general_styles.css">
+    <link rel="stylesheet" href="css/puzzle_styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="btn btn-lightgreen-frame">Home</a>
+        <form action="/logout" method="get">
+            <button type="submit" class="btn btn-lightgreen-frame btn-logout">Log out</button>
+        </form>
+    </nav>
+    <div class="container-supremeth">
+        <div class="question-wrapper">
+            <h2 class="question">Un <span class="x-field blank-field">x</span> se legana pe un <span class="y-field blank-field">y</span>
+                Si pentru ca nu se rupea, a mai chemat un <span class="x-field blank-field">x</span></h2>
+            <div class="form-wrapper">
+                <form action="/puzzles/10" method="post">
+                    <% if(progress > pageIndex) { %>
+                        <label>x:
+                            <input type="text" name="answerX" id="answerX" disabled>
+                        </label>
+                        <label for="">y:
+                            <input type="text" name="answerY" id="answerY" disabled>
+                        </label>
+                        <button type="submit" class="btn btn-lightgreen" disabled>Submit</button>
+                    <% } else { %>
+                        <label>x:
+                            <input type="text" name="answerX" id="answerX">
+                        </label>
+                        <label for="">y:
+                            <input type="text" name="answerY" id="answerY">
+                        </label>
+                        <button type="submit" class="btn btn-lightgreen">Submit</button>
+                    <% } %>
+                </form>
+                <div class="form-footer">
+                    <p>&gt;&gt;&gt;<%= message || "" %></p>
+                    <% if(progress > pageIndex) { %>
+                        <a href="#" class="btn btn-lightgreen">Purcede</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

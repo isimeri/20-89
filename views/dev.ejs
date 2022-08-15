@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/general_styles.css">
+    <link rel="stylesheet" href="css/dev.css">
+</head>
+<body>
+    <h2>add puzzle page info and users to db</h2>
+	<div class="content">
+		<section class="form-wrapper">
+			<h3>Add user</h3>
+			<form action="/dev/addUser" method="post">
+				<input type="text" name="username" id="username" placeholder="Username">
+				<input type="text" name="password" id="password" placeholder="Password">
+				<button type="submit" class="btn">Submit</button>
+			</form>
+		</section>
+			<section class="form-wrapper">
+			<h3>Add puzzle page</h3>
+			<form action="/dev/addPage" method="post">
+				<input type="number" name="pageIndex" id="page-index" min="1" max="10" placeholder="page index">
+				<input type="text" name="pageUrl" id="page-url" placeholder="page url">
+				<textarea name="hints" id="hints" cols="30" rows="10" placeholder="hints separated by a ;"></textarea>
+				<button type="submit" class="btn">Submit</button>
+			</form>
+			<section class="form-wrapper">
+				<h3>Add did you know</h3>
+				<form action="/dev/addDidYouKnow" method="post">
+					<textarea name="didYouKnow" id="didYouKnow" cols="30" rows="10" placeholder="did you knows separated by a ;"></textarea>
+					<button type="submit" class="btn">Submit</button>
+				</form>
+			</section>
+			<section class="form-wrapper">
+				<h3>Add news</h3>
+				<form action="/dev/addNews" method="post">
+					<textarea name="news" id="news" cols="30" rows="10" placeholder="news separated by a ;"></textarea>
+					<button type="submit" class="btn">Submit</button>
+				</form>
+			</section>
+		</section>
+		
+			<section class="users">
+			<form action="/dev/getUsers" method="get"><button type="submit" class="btn">Get Users</button></form>
+				<%if(users.length === 0){ %>
+					<p>helo</p>
+				<%} else {%>
+				<% for(let user of users) {%>
+					<div class="user">
+						<p>Username: <%= user.username %></p>
+						<p>Password: <%= user.password %></p>
+						<p>Progress: <%= user.progress %></p>
+						<p>Wrong Answers: <%= user.wrongAnswers %></p>
+					</div>
+				<% } %>
+			<% } %>
+		</section>
+			<section class="pages">
+			<form action="/dev/getPages" method="get"><button type="submit" class="btn">Get Pages</button></form>
+			<% if(pages.length === 0) {%>
+					<p>helo</p>
+				<% } else { %>
+				<% for(let page of pages) {%>
+					<div class="page">
+						<p>Page Index: <%= page.pageIndex %></p>
+						<% for(let i = 0; i < page.hints.length; i++) {%>
+							<p>Hint <%= i+1 %>: <%= page.hints[i] %></p>
+							<% } %>
+					</div>
+				<% } %>
+				<% } %>
+		</section>
+		<section class="did-you-know">
+			<form action="/dev/getDidYouKnow" method="get"><button type="submit" class="btn">Get Did You Know</button></form>
+			<% if(trivia.length === 0) {%>
+					<p>helo</p>
+				<% } else { %>
+				<% for(let item of trivia) {%>
+					<div class="page">
+						<p><%= item  %></p>
+					</div>
+				<% } %>
+				<% } %>
+		</section>
+		<section class="news">
+			<form action="/dev/getNews" method="get"><button type="submit" class="btn">Get news</button></form>
+			<% if(trivia.length === 0) {%>
+					<p>helo</p>
+				<% } else { %>
+				<% for(let item of trivia) {%>
+					<div class="page">
+						<p><%= item  %></p>
+					</div>
+				<% } %>
+				<% } %>
+		</section>
+	</div>
+</body>
+</html>

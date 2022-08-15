@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Notes</title>
+    <link rel="stylesheet" href="css/general_styles.css">
+    <style>
+        .container-supremeth{
+            min-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+        .note{
+            padding: 2rem;
+            color: #021;
+        }
+        .domnitori{
+            background: repeating-linear-gradient(to bottom, hsl(163, 54%, 57%) 0px, hsl(163, 54%, 57%) 20px, hsl(163, 54%, 47%) 20px, hsl(163, 54%, 47%) 40px);
+            grid-column: 2/5;
+            grid-row: 1/2;
+        }
+        .reteta{
+            background-color: hsl(230, 27%, 67%);
+            background: repeating-linear-gradient(to bottom, hsl(230, 27%, 67%) 0px, hsl(230, 27%, 67%) 20px, hsl(230, 27%, 57%) 20px, hsl(230, 27%, 57%) 40px);
+            grid-column: 9/12;
+            grid-row: 1/2;
+        }
+        .adjectiv{
+            /* background-color: hsl(50, 40%, 63%); */
+            background: repeating-linear-gradient(to bottom, hsl(50, 40%, 63%) 0px, hsl(50, 40%, 63%) 20px, hsl(50, 40%, 53%) 20px, hsl(50, 40%, 53%) 40px);
+            grid-column: 5/8;
+            grid-row: 2/3;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="btn btn-lightgreen-frame">Home</a>
+        <form action="/logout" method="get">
+            <button type="submit" class="btn btn-lightgreen-frame btn-logout">Log out</button>
+        </form>
+    </nav>
+    <div class="container-supremeth">
+        <div class="note domnitori">
+            <p>"Alexandru cel Bun, Stefan cel Mare, Radu cel Frumos -- de cercetat pentru
+                compunere la istorie pana pe 23.03.2012"</p>
+        </div>
+        <div class="note reteta">
+            <p>Reteta pentru sarnici</p>
+            <ul>
+                <li>Branza de vaca - o cana</li>
+                <li>3 oua</li>
+                <li>Sare la ochi</li>
+                <li>Soda la ochi</li>
+                <li>Faina cam doua cani</li>
+            </ul>
+        </div>
+        <div class="note adjectiv">
+            <p>adjectivul - parte de vorbire flexibila care arată o insusire a unui obiect sau a unei fiinte si determina numele acestora, acordandu-se cu ele in gen, numar si caz; adjectiv calificativ. -- pentru limba romana de ce</p>
+        </div>
+    </div>
+</body>
+</html>

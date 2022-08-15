@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css/general_styles.css">
+    <link rel="stylesheet" href="css/puzzle_styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="btn btn-lightgreen-frame">Home</a>
+        <form action="/logout" method="get">
+            <button type="submit" class="btn btn-lightgreen-frame btn-logout">Log out</button>
+        </form>
+    </nav>
+    <div class="container-supremeth">
+        <main>
+        <div class='question-wrapper'>
+            <div class="description">
+                <p>Incepem cu una simpla, pentru incalzire.</p>
+            </div>
+            <div class="question">
+                <h2>Intrebare: Ce au in comun urmatoarele vietuitoare: porumbel, iepure, porc, curcan?</h2>
+            </div>
+        
+            <div class="form-wrapper">
+                <form action="/puzzles/1" method="post">
+                    <% if(progress > pageIndex) { %>
+                        <input type="text" name="answer" id="answer" disabled>
+                        <button type="submit" class="btn" disabled>Submit</button>
+                    <% } else { %>
+                        <input type="text" name="answer" id="answer">
+                        <button type="submit" class="btn btn-lightgreen">Submit</button>
+                    <% } %>
+                </form>
+                <div class="form-footer">
+                    <p>&gt;&gt;&gt;<%= message || "" %></p>
+                    <% if(progress > pageIndex) { %>
+                        <a href="/puzzles/2" class="btn btn-lightgreen">Purcede</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="hints-wrapper">
+            <a href="/epic_life_quote" style="display: none;"></a>
+            <% for(let i = 0; i < hints.length; i++) { %>
+                <div class="hint">
+                    <p><%= hints[i] %></p>
+                </div>
+            <% } %>
+        </div>
+        <!-- ringo - 3 -->
+    </main>
+    </div>
+</body>
+</html>

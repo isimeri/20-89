@@ -1,0 +1,104 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Source Code Pro", monospace;
+    /* background-color: #021; */
+    color: #5ca;
+    background: repeating-linear-gradient(to bottom, hsl(70, 47%, 3%) 0px, hsl(70, 50%, 3%) 4px, hsl(70, 53%, 10%) 4px, hsl(71, 53%, 10%) 8px);
+    background-size: 100vw 8px;
+}
+nav{
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(70, 40%, 33%);
+    margin-bottom: 2rem;
+}
+.btn-logout{
+    height: 100%;
+}
+.container-supremeth{
+    padding: 0 5vw;
+    max-width: 2000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.header{
+    font-size: 2rem;
+    color: #5ca;
+    margin-bottom: 2rem;
+}
+
+.login-form{
+    padding: 1rem 0.6rem;
+    border: 1px solid #5a9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    max-width: 30rem;
+}
+input::placeholder{
+    color: rgb(100, 167, 148);
+}
+.login-form > input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid  #5a9;
+    background-color: #053;
+    color: #5ca;
+    font-family: "Source Code Pro", monospace;
+}
+.btn{
+    padding: 0.2rem 0.7rem;
+    font-family: "Source Code Pro", monospace;
+    font-size: 1rem;
+    border: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.btn-blue{
+    background-color: hsl(230, 27%, 67%);
+    color: hsl(50, 70%, 10%);
+}
+.btn-blue-frame{
+    border: 2px solid hsl(230, 27%, 67%);
+    /* color:hsl(230, 27%, 67%); */
+    color: rgb(129, 143, 213);
+    font-weight: bold;
+    background-color: transparent;
+    /* color: rgb(109, 101, 59); */
+}
+.btn-lightgreen{
+    background-color: #5ca;
+    color: #021;
+}
+.btn-lightgreen-frame{
+    border: 2px solid #5ca;
+    color: #5ca;
+    font-weight: bold;
+    background-color: transparent;
+}
+.btn:disabled:hover{
+    cursor: default;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.link{
+    text-decoration: none;
+    color: hsl(230, 27%, 67%);
+}
+.link:hover{
+    color: hsl(230, 27%, 87%);
+}

@@ -1,0 +1,17 @@
+.list-wrapper{
+    background-color: rgb(0, 20, 0, 0.8);
+    padding: 1rem;
+    border: 1px solid #5ca;
+}
+ul{
+    padding: 0 1rem;
+}
+li{
+    padding: 0.5rem;
+}
+.emphasis{
+    display: inline-block;
+    padding: 0 2px;
+    background-color: #5ca;
+    color: #021;
+}

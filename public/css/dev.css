@@ -1,0 +1,24 @@
+body{
+    padding: 1rem;
+}
+h2{
+    margin-bottom: 2rem;
+}
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 1rem;
+}
+section{
+    border: 2px solid #5ca;
+    padding: 1rem;
+}
+.btn{
+    margin-bottom: 0.5rem;
+}
+.page, .user{
+    border: 1px solid #5ca;
+    padding: 0.6rem;
+    margin-bottom: 0.5rem;
+}

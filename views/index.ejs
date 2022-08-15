@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina principala</title>
+    <link rel="stylesheet" href="css/general_styles.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="btn btn-lightgreen-frame">Home</a>
+        <form action="/logout" method="get">
+            <button type="submit" class="btn btn-lightgreen-frame btn-logout">Log out</button>
+        </form>
+    </nav>
+    <div class="container-supremeth">
+        <h2 class="header main-header">bun venit, <%= user.username %></h2>
+        <main>
+            <div class="trivia-wrapper">
+                <!-- in aste doua de mai jos, fa cate un array cu tot felul de aberatii si aplica un rng le fiecare GET -->
+                <div class="stiati-ca">
+                    <%= didYouKnow %>
+                </div>
+                <div class="stiri-de-ultima-ora">
+                    <%= news %>
+                </div>
+                <div class="instructions-wrapper">
+                    <a href="/instructions" class="link">instructiuni</a>
+                    <p>da click aici doar daca esti loser</p>
+                </div>
+            </div>
+            <div class="pages-wrapper">
+                <% for(let i = 0; i < 10; i++) { %>
+                    <% if(user.isAdmin) {%>
+                        <div class="page active">
+                            <a href="/puzzles/<%= i+1 %>"><%= i+1 %></a>
+                        </div>
+                    <% } else {%>
+                        <div class="<%= i+1 > user.progress ? 'page inactive' : 'page active' %>">
+                            <% if(i+1 > user.progress) { %>
+                                <p><%= i+1 %></p>
+                            <%} else { %>
+                                <a href="/puzzles/<%= i+1 %>"><%= i+1 %></a>
+                            <%}%>
+                        </div>
+                    <% } %>
+
+                        <!-- pages[i].pageUrl -->
+                <%}%>
+            </div>
+            
+        </main>
+    </div>
+</body>
+</html>
