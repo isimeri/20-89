@@ -1,0 +1,9 @@
+table{
+    background: repeating-linear-gradient(to bottom, hsl(70, 47%, 3%) 0px, hsl(70, 50%, 3%) 4px, hsl(70, 53%, 10%) 4px, hsl(71, 53%, 10%) 8px);
+    border-collapse: collapse;
+    border: 1px solid #5ca;
+}
+td{
+    padding: 0.5rem;
+    border: 1px solid #5ca;
+}
