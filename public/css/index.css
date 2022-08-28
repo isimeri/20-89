@@ -13,7 +13,7 @@ main{
     max-width: 30rem;
 }
 .trivia-wrapper > div {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     border-bottom: 1px dashed #5ca;
 }
 .trivia-wrapper > div:last-child{
@@ -21,8 +21,9 @@ main{
     padding-top: 1rem;
     border: none;
 }
-.instructions-wrapper > .link {
-    text-decoration-style: dashed;
+.heading{
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #5ca;
 }
 .pages-wrapper{
     justify-content: center;
@@ -51,4 +52,9 @@ main{
     height: 100%;
     width: 100%;
     cursor: pointer;
+}
+.link.instructions{
+    border-bottom:  1px dashed #5ca;
+    display: inline-block;
+    margin-bottom: 5px;
 }

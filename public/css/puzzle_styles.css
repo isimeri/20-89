@@ -27,7 +27,7 @@ main{
 .question-wrapper{
     /* grid-column: 1/10; */
     flex-grow: 3;
-    background-color: rgb(0,0,0,0.5);
+    background-color: rgb(0,0,0,0.4);
     padding: 2rem;
     border: 1px solid #5ca;
     max-width: 800px;

@@ -174,7 +174,7 @@ router.post('/puzzles/3', checkAuth, async (req, res) => {
 // 	res.render('puzzle4', {message: '', success: false});
 // 	 //for sum fuken reason, i must pass message and success or else ejs will say bruh
 // });
-router.post('/puzzle4', checkAuth, async (req, res) => {
+router.post('/puzzles/4', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 4;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
@@ -199,7 +199,7 @@ router.post('/puzzle4', checkAuth, async (req, res) => {
 // 	res.render('puzzle5', {message: '', success: false});
 // 	 //for sum fuken reason, i must pass message and success or else ejs will say bruh
 // });
-router.post('/puzzle5', checkAuth, async (req, res) => {
+router.post('/puzzles/5', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 5;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
@@ -207,7 +207,7 @@ router.post('/puzzle5', checkAuth, async (req, res) => {
 	const regex = /[a-zA-Z0-9]/gi;
 	const rawAnswer = (req.body.answer).trim().toLowerCase();
 	const answer = rawAnswer.match(regex);
-	const correctAnswer = [3,6,'b','e','g'];
+	const correctAnswer = ['3','6','b','e','g'];
 	if(correctAnswer.every(item => answer.includes(item)) && answer.every(item => correctAnswer.includes(item))){
 		req.user.progress = 6;
 		await userModel.updateOne({_id: req.user.id}, {progress: req.user.progress});
@@ -226,7 +226,7 @@ router.post('/puzzle5', checkAuth, async (req, res) => {
 // 	res.render('puzzle6', {message: '', success: false});
 // 	 //for sum fuken reason, i must pass message and success or else ejs will say bruh
 // });
-router.post('/puzzle6', checkAuth, async (req, res) => {
+router.post('/puzzles/6', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 6;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
@@ -251,7 +251,7 @@ router.post('/puzzle6', checkAuth, async (req, res) => {
 // 	res.render('puzzle7', {message: '', success: false});
 // 	 //for sum fuken reason, i must pass message and success or else ejs will say bruh
 // });
-router.post('/puzzle7', checkAuth, async (req, res) => {
+router.post('/puzzles/7', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 7;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
@@ -276,7 +276,7 @@ router.post('/puzzle7', checkAuth, async (req, res) => {
 // 	res.render('puzzle8', {message: '', success: false});
 // 	 //for sum fuken reason, i must pass message and success or else ejs will say bruh
 // });
-router.post('/puzzle8', checkAuth, async (req, res) => {
+router.post('/puzzles/8', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 8;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
@@ -301,7 +301,7 @@ router.post('/puzzle8', checkAuth, async (req, res) => {
 // 	res.render('puzzle9', {message: '', success: false});
 // 	 //for sum fuken reason, i must pass message and success or else ejs will say bruh
 // });
-router.post('/puzzle9', checkAuth, async (req, res) => {
+router.post('/puzzles/9', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 9;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
@@ -327,7 +327,7 @@ router.post('/puzzle9', checkAuth, async (req, res) => {
 // 	res.render('puzzle10', {message: '', success: false});
 // 	 //for sum fuken reason, i must pass message and success or else ejs will say bruh
 // });
-router.post('/puzzle10', checkAuth, async (req, res) => {
+router.post('/puzzles/10', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 10;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});

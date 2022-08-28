@@ -1,0 +1,10 @@
+.poem-wrapper{
+    
+    background: repeating-linear-gradient(to bottom, hsl(70, 47%, 3%) 0px, hsl(70, 50%, 3%) 4px, hsl(70, 53%, 10%) 4px, hsl(71, 53%, 10%) 8px);
+    border: 1px dashed #5ca;
+}
+.poem{
+    padding: 0.5rem 1rem;
+    line-height: 1.5;
+    background-color: rgb(0,0,0,0.15);
+}

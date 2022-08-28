@@ -1,0 +1,19 @@
+.lists{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem
+}
+.list{
+    list-style: none;
+    word-break: break-all;
+}
+.list-wrapper{
+    padding: 1rem;
+    border: 1px dashed #5ca;
+}
