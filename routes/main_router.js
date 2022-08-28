@@ -368,5 +368,16 @@ router.get('/heart', checkAuth, (req, res) => {
 router.get('/epic_life_quote2', checkAuth, (req, res) => {
 	res.render('puzzle4_b_epic_marina_quote');
 });
+router.get('/relatabil', checkAuth, (req, res) => {
+	res.render('puzzle8_a_vadalei', {msg: '', vadaleiString: ''});
+});
+router.post('/relatabil', checkAuth, (req, res) => {
+	const pass = req.body.p8pass;
+	if(pass === "oocicmizdt"){
+		res.render('puzzle8_a_vadalei', {msg: 'Pare-se ca da. Ceea dupa ce ai venit se afla mai jos.', vadaleiString: 'Ia tut cac pasmatrel vacrug, slushte, mi sabralisi tacaia camanda serioznih vadaleev :D'});
+	} else {
+		res.render('puzzle8_a_vadalei', {msg: 'Pare-se ca nu. Mai cutreiera taramul si vino inapoi cand ai ceea ce trebuie', vadaleiString: ''});
+	}
+});
 
 module.exports = router;

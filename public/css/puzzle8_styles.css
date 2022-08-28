@@ -7,3 +7,9 @@ td{
     padding: 0.5rem;
     border: 1px solid #5ca;
 }
+.accent{
+    background-color: #5ca;
+    color:hsl(70, 47%, 3%);
+    padding: 5px;
+    text-align: center;
+}
