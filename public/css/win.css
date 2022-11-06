@@ -1,0 +1,157 @@
+*, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Source Code Pro", monospace;
+    overflow-x: hidden;
+}
+body.firefox{
+    --lsS: 5px;
+    --lsM: 10px;
+    --lsB: 15px;
+}
+
+body.chrome{
+    --lsS: 2px;
+    --lsM: 3px;
+    --lsB: 3px
+}
+.container-supremeth{
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(0, 10, 5);
+    /* display: flex;
+    justify-content: space-between; */
+    user-select: none;
+    position: relative;
+    width: 2000px;
+}
+.stripes-layer{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.stripes-layer.small{
+    font-size: 0.8rem;
+    letter-spacing: var(--lsS);
+    color: rgba(85, 204, 153, 0.2);
+}
+.stripes-layer.medium{
+    
+    font-size: 1.5rem;
+    letter-spacing: var(--lsM);
+    color: rgba(85, 204, 153, 0.6);
+}
+.stripes-layer.big{
+    font-size: 3rem;
+    letter-spacing: var(--lsB);
+    color: rgb(85, 204, 153);
+}
+.ver-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* outline: 1px dotted red; */
+    /* width: 1.5rem; */
+    position: relative;
+}
+.stripes-layer.big .ver-container.empty{
+    width: 2.5rem;
+    /* background: white; */
+}
+.stripes-layer.medium .ver-container.empty{
+    width: 1.5rem;
+}
+.ver-text{
+    --y: 0;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    position: absolute;
+    overflow: hidden;
+}
+.ver-text.one{
+    top: calc(var(--y) * 1px);
+}
+.ver-text.two{
+    top: calc(var(--y) * 1px);
+    /* top: 1000px; */
+}
+
+.text-container{
+    position: absolute;
+    z-index: 99;
+    top: 20vmin;
+    left: 50%;
+    translate: -50% 0;
+    min-height: 400px;
+    min-width: 600px;
+    max-width: 800px;
+    background-color: rgb(0,0,0,0.9);
+    border: 1px solid #5ca;
+    color: #5ca;
+    padding: 1rem 2rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.text-container::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 10, 5);
+    transform-origin: bottom;
+    animation-name: slideDown;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+.text-small{
+    font-size: 10px;
+
+}
+.black-screen{
+    opacity: 1;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    pointer-events: none;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes slideDown{
+    0%{
+        scale: 1 1;
+    }
+    100%{
+        scale: 1 0;
+    }
+}

@@ -350,6 +350,15 @@ router.post('/puzzles/10', checkAuth, async (req, res) => {
 	}
 });
 
+router.get('/gg', checkAuth, (req, res) => {
+	
+	if(req.params.progress === 11){
+		return res.render('win');
+	} else {
+		return res.status(403).render('403', {username: req.user.username});
+	}
+});
+
 //-------------------------------------------------------------------
 //-----------------------------SIDE-ROUTES---------------------------
 //-------------------------------------------------------------------
