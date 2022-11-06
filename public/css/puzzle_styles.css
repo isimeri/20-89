@@ -7,7 +7,7 @@ main{
     gap: 1rem;
 }
 .description{
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     font-weight: 400;
     opacity: 0.7;
 }
@@ -23,6 +23,8 @@ main{
 .hint{
     background-color: rgb(55,200,150, 0.3);
     padding: 0.5rem;
+    margin-bottom: 5px;
+    border-left: 1px dashed #5ca;
 }
 .question-wrapper{
     /* grid-column: 1/10; */

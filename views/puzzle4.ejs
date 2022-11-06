@@ -19,6 +19,7 @@
         <main>
             <div class="question-wrapper">
                 <h2 class="question">O, nu, omenirea este în pericol!</h2>
+                <!-- idoma - iii -->
                 <div class="form-wrapper">
                     <form action="/puzzles/4" method="post">
                         <% if(progress > pageIndex) { %>
@@ -36,9 +37,9 @@
                         <% } %>
                     </div>
                 </div>
-                <!-- <a href="/heart">da click daca vrei sa mori</a> asta las-o pe ecran, dar acoper-o cu un ceva pos:abs; -->
+                <!-- du-te catre /heart -->
             </div>
-            <div class="hints-wrapper">
+            <div class="hints-wrapper" style=" opacity: <%= hints.length === 0 ? 0 : 1 %>">
                 <% for(let i = 0; i < hints.length; i++) { %>
                     <div class="hint">
                         <p><%= hints[i] %></p>

@@ -3,7 +3,7 @@
     justify-content: center;
     gap: 2rem;
 }
-main{
+.question-details{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

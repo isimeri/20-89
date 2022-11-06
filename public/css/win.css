@@ -117,7 +117,10 @@ body.chrome{
 }
 .text-small{
     font-size: 10px;
-
+}
+.link{
+    text-decoration: none;
+    color: #5ca;
 }
 .black-screen{
     opacity: 1;

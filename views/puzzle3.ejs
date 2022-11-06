@@ -17,11 +17,12 @@
     </nav>
     <div class="container-supremeth">
         <main>
+            <!-- otor - 1 -->
             <div class="question-wrapper">
                 <h2 class="question">Care este numele de super-erou al unicului președinte moldovean cu super puteri?</h2>
                 <div class="form-wrapper">
                     <!-- am pus mai jos un link catre un site de cumparat droguri si marihuanele ca sa nu uit nu intra acolo ca te vede kgb -->
-                    <a href="/sticky_notes" style="display: none;">link nedubios</a>
+                    <a href="/sticky_notes" class="link" style="display: none;">link nedubios</a>
                     <form action="/puzzles/3" method="post">
                         <% if(progress > pageIndex) { %>
                             <input type="text" name="answer" id="answer" disabled>
@@ -39,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hints-wrapper">
+            <div class="hints-wrapper" style=" opacity: <%= hints.length === 0 ? 0 : 1 %>">
                 <% for(let i = 0; i < hints.length; i++) { %>
                     <div class="hint">
                         <p><%= hints[i] %></p>

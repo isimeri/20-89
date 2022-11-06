@@ -43,14 +43,15 @@
                 </div>
             </div>
         </div>
-        <div class="hints-wrapper">
-            <a href="/epic_life_quote" style="display: none;">pregateste-te</a>
+        <div class="hints-wrapper" style=" opacity: <%= hints.length === 0 ? 0 : 1 %>">
+            
             <% for(let i = 0; i < hints.length; i++) { %>
                 <div class="hint">
                     <p><%= hints[i] %></p>
                 </div>
             <% } %>
         </div>
+        <a href="/epic_life_quote" class="link" style="display: none;">pregateste-te</a>
         <!-- ringo - 3 -->
     </main>
     </div>

@@ -17,54 +17,64 @@
         </form>
     </nav>
     <div class="container-supremeth">
-        <div class="question-wrapper">
-            <h2 class="question">9 alt+4</h2>
-            <main>
-                <div class="lists">
-                    <div class="list-wrapper">
-                        <ul class="left-list list">
-                            <li>1. Iepure veninos</li>
-                            <li>2. Mașină de tuns iarba</li>
-                            <li>3. Harry Potter și Ordinul Phoenix</li>
-                            <li>4. Chiloți cu guler</li>
-                            <li>5. Greblă cu Bluetooth</li>
-                            <li>6. Moara cu noroc</li>
-                            <li>7. Barrack Obama</li>
-                            <li>8. Acvariu pentru hulubi</li>
-                        </ul>
+        <main>
+            <div class="question-wrapper">
+                <h2 class="question">9 alt+4</h2>
+                <div class="question-details">
+                    <div class="lists">
+                        <div class="list-wrapper">
+                            <ul class="left-list list">
+                                <li>1. Iepure veninos</li>
+                                <li>2. Mașină de tuns iarba</li>
+                                <li>3. Harry Potter și Ordinul Phoenix</li>
+                                <li>4. Chiloți cu guler</li>
+                                <li>5. Greblă cu Bluetooth</li>
+                                <li>6. Moara cu noroc</li>
+                                <li>7. Barrack Obama</li>
+                                <li>8. Acvariu pentru hulubi</li>
+                            </ul>
+                        </div>
+                        <div class="list-wrapper">
+                            <ul class="right-list list">
+                                <li>a. Colțuni cu pleoape</li>
+                                <li>b. Aventurile lui Tom Sawyer</li>
+                                <!-- nocle - ii  -->
+                                <li>c. Parașuta de lemn</li>
+                                <li>d. Hârtie igienică second hand</li>
+                                <li>e. Minunata lume nouă</li>
+                                <li>f. Pantaloni portabili</li>
+                                <li>g. Portocală mecanică</li>
+                                <li>h. Diclordifeniltricloretan</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="list-wrapper">
-                        <ul class="right-list list">
-                            <li>a. Colțuni cu pleoape</li>
-                            <li>b. Aventurile lui Tom Sawyer</li>
-                            <li>c. Parașuta de lemn</li>
-                            <li>d. Hârtie igienică second hand</li>
-                            <li>e. Minunata lume nouă</li>
-                            <li>f. Pantaloni portabili</li>
-                            <li>g. Portocală mecanică</li>
-                            <li>h. Diclordifeniltricloretan</li>
-                        </ul>
+                    <div class="form-wrapper">
+                        <form action="/puzzles/5" method="post">
+                            <% if(progress > pageIndex) { %>
+                                <input type="text" name="answer" id="answer" disabled>
+                                <button type="submit" class="btn btn-lightgreen" disabled>Submit</button>
+                            <% } else { %>
+                                <input type="text" name="answer" id="answer">
+                                <button type="submit" class="btn btn-lightgreen">Submit</button>
+                            <% } %>
+                        </form>
+                        <div class="form-footer">
+                            <p>&gt;&gt;&gt;<%= message || "" %></p>
+                            <% if(progress > pageIndex) { %>
+                                <a href="/puzzles/6" class="btn btn-lightgreen">Purcede</a>
+                            <% } %>
+                        </div>
                     </div>
                 </div>
-                <div class="form-wrapper">
-                    <form action="/puzzles/5" method="post">
-                        <% if(progress > pageIndex) { %>
-                            <input type="text" name="answer" id="answer" disabled>
-                            <button type="submit" class="btn btn-lightgreen" disabled>Submit</button>
-                        <% } else { %>
-                            <input type="text" name="answer" id="answer">
-                            <button type="submit" class="btn btn-lightgreen">Submit</button>
-                        <% } %>
-                    </form>
-                    <div class="form-footer">
-                        <p>&gt;&gt;&gt;<%= message || "" %></p>
-                        <% if(progress > pageIndex) { %>
-                            <a href="/puzzles/6" class="btn btn-lightgreen">Purcede</a>
-                        <% } %>
+            </div>
+            <div class="hints-wrapper" style=" opacity: <%= hints.length === 0 ? 0 : 1 %>">
+                <% for(let i = 0; i < hints.length; i++) { %>
+                    <div class="hint">
+                        <p><%= hints[i] %></p>
                     </div>
-                </div>
-            </main>
-        </div>
+                <% } %>
+            </div>
+        </main>
     </div>
 </body>
 </html>

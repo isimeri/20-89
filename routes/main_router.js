@@ -76,7 +76,7 @@ router.get('/puzzles/:id', checkAuth, async (req, res) => {
 	if(req.params.id <= 10 && req.params.id >= 1){
 		const pageIndex = req.params.id;
 		const page = await pageModel.findOne({pageIndex}).select({hints: 1});
-		const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[0] / 4));
+		const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[parseInt(pageIndex) - 1] / 4));
 		if(req.user.isAdmin === true){
 			return res.render(`puzzle${pageIndex}`, {hints: hintsToSend, message: '', progress: req.user.progress, pageIndex, isAdmin: req.user.isAdmin});
 		}
@@ -351,8 +351,8 @@ router.post('/puzzles/10', checkAuth, async (req, res) => {
 });
 
 router.get('/gg', checkAuth, (req, res) => {
-	
-	if(req.params.progress === 11){
+	console.log(req.user.progress)
+	if(req.user.progress === 11){
 		return res.render('win');
 	} else {
 		return res.status(403).render('403', {username: req.user.username});

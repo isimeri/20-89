@@ -20,6 +20,7 @@
             <div class="question-wrapper">
                 <h2 class="question">Câte unghiuri are hexagonul?</h2>
                 <p class="small description">Nu totul este atât de simplu precum pare, consideră-te avertizată.</p>
+                <!-- ster - i  -->
                 <div class="form-wrapper">
                     <form action="/puzzles/2" method="post">
                         <% if(progress > pageIndex) { %>
@@ -30,7 +31,7 @@
                             <button type="submit" class="btn btn-lightgreen">Submit</button>
                         <% } %>
                     </form>
-                    <input type="hidden" class="ooooooooooooooooo, ce sa fie oare aicea" data-linkulSpreAdevar="https://www.youtube.com/watch?v=HaAezMqOp45">
+                    <input type="hidden" class="ooooooooooooooooo, ce sa fie oare aicea" data-linkulSpreAdevar="https://www.youtube.com/watch?v=HaAezMqOp4s">
                     <div class="form-footer">
                         <p>&gt;&gt;&gt;<%= message || "" %></p>
                         <% if(progress > pageIndex) { %>
@@ -39,7 +40,7 @@
                     </div>
                 </div>
             </div> 
-            <div class="hints-wrapper">
+            <div class="hints-wrapper" style=" opacity: <%= hints.length === 0 ? 0 : 1 %>" >
                 <% for(let i = 0; i < hints.length; i++) { %>
                     <div class="hint">
                         <p><%= hints[i] %></p>

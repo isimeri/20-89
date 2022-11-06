@@ -17,35 +17,44 @@
         </form>
     </nav>
     <div class="container-supremeth">
-        <a href="https://i.imgur.com/taFJ9EH.jpg" style="display: none">hm</a>
-        <div class="question-wrapper">
-            <div class="poem-wrapper">
-                <p class="poem">Sara pe deal buciumul sună cu jale,<br/>
-                Turmele-l urc, stele le scapără-n cale,<br/>
-                Apele plâng, clar izvorând în fântâne;<a href="https://i.imgur.com/hweGikq.jpg" style="display: none">hm</a><br/>
-                Sub un salcâm, dragă, m-aștepți tu pe mine.</p>
-            </div>
-            <h2 class="question">Ce mesaj a vrut să transmită poetul către cititor în aceste versuri?</h2>
-            <a href="https://i.imgur.com/BKlzyP4.jpg" style="display: none">hm</a>
-            <div class="form-wrapper">
-                <form action="/puzzles/9" method="post">
-                    <% if(progress > pageIndex) { %>
-                        <input type="text" name="answer" id="answer" disabled>
-                        <button type="submit" class="btn btn-lightgreen" disabled>Submit</button>
-                    <% } else { %>
-                        <input type="text" name="answer" id="answer">
-                        <button type="submit" class="btn btn-lightgreen">Submit</button>
-                    <% } %>
-                </form>
-                <div class="form-footer">
-                    <p>&gt;&gt;&gt;<%= message || "" %></p>
-                    <% if(progress > pageIndex) { %>
-                        <a href="/puzzles/10" class="btn btn-lightgreen">Purcede</a>
-                    <% } %>
+        <main>
+            <a href="https://i.imgur.com/taFJ9EH.jpg" style="display: none">hm</a>
+            <div class="question-wrapper">
+                <div class="poem-wrapper">
+                    <p class="poem">Sara pe deal buciumul sună cu jale,<br/>
+                    Turmele-l urc, stele le scapără-n cale,<br/> <!--stoid - iv-->
+                    Apele plâng, clar izvorând în fântâne;<a href="https://i.imgur.com/hweGikq.jpg" style="display: none">hm</a><br/>
+                    Sub un salcâm, dragă, m-aștepți tu pe mine.</p>
                 </div>
+                <h2 class="question">Ce mesaj a vrut să transmită poetul către cititor în aceste versuri?</h2>
+                <a href="https://i.imgur.com/BKlzyP4.jpg" style="display: none">hm</a>
+                <div class="form-wrapper">
+                    <form action="/puzzles/9" method="post">
+                        <% if(progress > pageIndex) { %>
+                            <input type="text" name="answer" id="answer" disabled>
+                            <button type="submit" class="btn btn-lightgreen" disabled>Submit</button>
+                        <% } else { %>
+                            <input type="text" name="answer" id="answer">
+                            <button type="submit" class="btn btn-lightgreen">Submit</button>
+                        <% } %>
+                    </form>
+                    <div class="form-footer">
+                        <p>&gt;&gt;&gt;<%= message || "" %></p>
+                        <% if(progress > pageIndex) { %>
+                            <a href="/puzzles/10" class="btn btn-lightgreen">Purcede</a>
+                        <% } %>
+                    </div>
+                </div>
+                <a href="https://i.imgur.com/QQtg908.gifv" style="display: none">hm</a>
             </div>
-            <a href="https://i.imgur.com/QQtg908.gifv" style="display: none">hm</a>
-        </div>
+            <div class="hints-wrapper" style=" opacity: <%= hints.length === 0 ? 0 : 1 %>">
+                <% for(let i = 0; i < hints.length; i++) { %>
+                    <div class="hint">
+                        <p><%= hints[i] %></p>
+                    </div>
+                <% } %>
+            </div>
+        </main>
     </div>
 </body>
 </html>
