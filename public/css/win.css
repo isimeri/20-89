@@ -16,7 +16,7 @@ body.firefox{
 body.chrome{
     --lsS: 2px;
     --lsM: 3px;
-    --lsB: 3px
+    --lsB: 3px;
 }
 .container-supremeth{
     height: 100vh;

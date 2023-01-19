@@ -45,7 +45,7 @@ router.get('/', checkAuth, async (req, res) => {
 });
 
 router.get('/login', checkNotAuth, (req, res) => {
-    res.render('login', );
+    res.render('login');
 });
 
 router.post('/login', checkNotAuth, passport.authenticate('local', {
@@ -69,7 +69,7 @@ router.get('/login_b', checkNotAuth, (req, res) => {
 });
 router.get('/instructions', checkAuth, (req, res) => {
 	res.render('instructions');
-})
+});
 
 router.get('/puzzles/:id', checkAuth, async (req, res) => {
 	// req.user.isAdmin = true; /////// fix this
@@ -100,7 +100,7 @@ router.post('/puzzles/1', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 1;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
-	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[0] / 4));
+	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[parseInt(pageIndex) - 1] / 4));
 	const answer = (req.body.answer).trim().toLowerCase();
 	const correctAnswers = ['dodon', 'igor dodon', 'igari'];
 	if(correctAnswers.includes(answer)){
@@ -127,7 +127,7 @@ router.post('/puzzles/2', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 2;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
-	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[0] / 4));
+	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[parseInt(pageIndex) - 1] / 4));
 	const answer = (req.body.answer).trim().toLowerCase();
 	const correctAnswers = ['opt'];
 	if(correctAnswers.includes(answer)){
@@ -152,7 +152,7 @@ router.post('/puzzles/3', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 3;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
-	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[0] / 4));
+	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[parseInt(pageIndex) - 1] / 4));
 	const regex = /^[-,._;:'"\s]*nicolae[-,._;:'"\s]*cel[-,._;:'"\s]*invizibil[-,._;:'"\s]*$/i
 	const answer = (req.body.answer).trim().toLowerCase();
 	if(regex.test(answer)){
@@ -178,7 +178,7 @@ router.post('/puzzles/4', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 4;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
-	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[0] / 4));
+	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[parseInt(pageIndex) - 1] / 4));
 	const regex = /^[-,._;:'"\s]*dragostea[-,._;:'"\s]*dintr-e[-,._;:'"\s]*barbat[-,._;:'"\s]*si[-,._;:'"\s]*femeie[-,._;:'"\s]*$/i
 	const answer = (req.body.answer).trim().toLowerCase();
 	if(regex.test(answer)){
@@ -203,7 +203,7 @@ router.post('/puzzles/5', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 5;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
-	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[0] / 4));
+	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[parseInt(pageIndex) - 1] / 4));
 	const regex = /[a-zA-Z0-9]/gi;
 	const rawAnswer = (req.body.answer).trim().toLowerCase();
 	const answer = rawAnswer.match(regex);
@@ -230,7 +230,7 @@ router.post('/puzzles/6', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 6;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
-	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[0] / 4));
+	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[parseInt(pageIndex) - 1] / 4));
 	const answer = (req.body.answer).trim().toLowerCase();
 	const correctAnswers = ['nioza'];
 	if(correctAnswers.includes(answer)){
@@ -255,7 +255,7 @@ router.post('/puzzles/7', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 7;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
-	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[0] / 4));
+	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[parseInt(pageIndex) - 1] / 4));
 	const answer = (req.body.answer).trim().toLowerCase();
 	const correctAnswers = ['paracetamol'];
 	if(correctAnswers.includes(answer)){
@@ -280,7 +280,7 @@ router.post('/puzzles/8', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 8;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
-	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[0] / 4));
+	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[parseInt(pageIndex) - 1] / 4));
 	const answer = (req.body.answer).trim().toLowerCase();
 	const correctAnswers = ['vadalei', 'vodolei', 'varsator'];
 	if(correctAnswers.includes(answer)){
@@ -305,7 +305,7 @@ router.post('/puzzles/9', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 9;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
-	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[0] / 4));
+	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[parseInt(pageIndex) - 1] / 4));
 	const answer = (req.body.answer).trim().toLowerCase();
 	const correctAnswers = ['nimic', 'nimica', 'nica', 'nu'];
 	if(correctAnswers.includes(answer)){
@@ -331,7 +331,7 @@ router.post('/puzzles/10', checkAuth, async (req, res) => {
 	//maybe set hte asnwers in the db and pull them to check against teh submitted answer
 	const pageIndex = 10;
 	const page = await pageModel.findOne({pageIndex}).select({hints: 1});
-	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[0] / 4));
+	const hintsToSend = page.hints.slice(0, Math.floor(req.user.wrongAnswers[parseInt(pageIndex) - 1] / 4));
 	const answerX = (req.body.answerX).trim().toLowerCase();
 	const answerY =	(req.body.answerY).trim().toLowerCase();
 	const correctAnswers = {
